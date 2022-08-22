@@ -12,9 +12,10 @@ private:
 
 public:
 
-    Objeto(int _serial,string _categoria);
+
     Objeto();
     ~Objeto();
+    void crearObjeto();
     void setserial(int _serial);
     void setcategoria(string _categoria);
     int getserial();

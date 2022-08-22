@@ -7,14 +7,15 @@ Objeto::Objeto(){
     categoria="a";
 
 }
-Objeto::Objeto(int _serial,string _categoria){
-    serial=_serial;
-    categoria=_categoria;
-}
+
 
 
 Objeto::~Objeto(){
 
+
+
+}
+void crearObjeto(){
 
 }
 void Objeto::setserial(int _serial){
