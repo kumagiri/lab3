@@ -4,7 +4,7 @@
 
 Objeto::Objeto(){
     serial=0;
-    categoria="a";
+    categoria="0";
 
 }
 
@@ -15,15 +15,12 @@ Objeto::~Objeto(){
 
 
 }
-void crearObjeto(){
+void Objeto::crearObjeto(){
 
-}
-void Objeto::setserial(int _serial){
-    serial=_serial;
-}
-void Objeto::setcategoria(string _categoria){
+    serial=100000 + rand()%1000000;
+    cout<<"Por favor ingrese la categoria: ";
+    cin>>categoria;
 
-    categoria=_categoria;
 }
 
 int Objeto::getserial(){

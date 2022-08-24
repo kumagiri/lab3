@@ -1,16 +1,18 @@
 #include <iostream>
 #include "objeto.h"
+#include "listadeobjetos.h"
 using namespace std;
 
 int main()
 {
-
-    Objeto* colleccion=new Objeto();
-
-    colleccion->setserial(10000);
-    colleccion->setcategoria("hola");
-
-    cout<<"serial: "<<colleccion->getserial()<<endl;
-    cout<<"categoria: "<<colleccion->getcategoria()<<endl;
+    listadeobjetos a1;
+    a1.crearLista(5);
+    a1.llenar();
+    system("cls");
+    a1.mostrar_elemento(0);
+    a1.llenar();
+    system("cls");
+    a1.mostrar_elemento(1);
+    a1.mostrar_elemento(0);
     return 0;
 }
