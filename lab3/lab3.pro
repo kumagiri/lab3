@@ -6,8 +6,10 @@ CONFIG -= qt
 SOURCES += \
         listadeobjetos.cpp \
         main.cpp \
+        menus.cpp \
         objeto.cpp
 
 HEADERS += \
     listadeobjetos.h \
+    menus.h \
     objeto.h

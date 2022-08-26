@@ -6,7 +6,7 @@ using namespace std;
 
 listadeobjetos::listadeobjetos()
 {
-   lista=new Objeto[5];
+
 }
 
 void listadeobjetos::crearLista(int tam){
@@ -17,9 +17,13 @@ void listadeobjetos::crearLista(int tam){
 }
 
 void listadeobjetos::llenar(){
-
+    if (contador<tam_max){
     lista[contador].crearObjeto();
     contador++;
+    }
+    else{
+        cout<<"la lista esta llena\n";
+    }
 }
 void listadeobjetos::mostrar_elemento(int elemento){
 
@@ -31,4 +35,6 @@ void listadeobjetos::mostrar_elemento(int elemento){
 
 }
 
-
+int listadeobjetos::gettamano(){
+    return tam_max;
+}
