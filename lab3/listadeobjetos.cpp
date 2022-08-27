@@ -27,11 +27,16 @@ void listadeobjetos::llenar(){
 }
 void listadeobjetos::mostrar_elemento(int elemento){
 
+
     this->elemento=elemento;
+    if(lista[elemento].getserial()==0){
+        cout<<"el objeto que decea ver esta vacio\n";
+    }
+    else{
     cout<<"El objeto seleccionado es: \n";
     cout<<"Numero serial: "<<lista[elemento].getserial()<<endl;
     cout<<"Categoria: "<<lista[elemento].getcategoria()<<endl;
-
+    }
 
 }
 

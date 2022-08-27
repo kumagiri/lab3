@@ -16,8 +16,6 @@ public:
     void crearLista(int);
     void llenar();
     void mostrar_elemento(int);
-    void mostrar_lista(int);
-    void numero_de_objetos(int);
     int gettamano();
 };
 

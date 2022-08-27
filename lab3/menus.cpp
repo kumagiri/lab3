@@ -9,7 +9,7 @@ int menu_inicial(){
           "1.listas de objetos\n "
           "2.Agenda de citas y compromisos\n "
           "3.Stack\n "
-          "4.Salir";
+          "4.Salir: ";
     cin>>a;
     return a;
 }
