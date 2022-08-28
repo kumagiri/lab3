@@ -8,7 +8,7 @@ class citas
 {
 private:
     string nombre1,nombre2,lugar;
-    fecha diaCita;
+    fecha *diaCita;
 
 public:
     citas();

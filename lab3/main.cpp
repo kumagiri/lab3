@@ -141,6 +141,10 @@ int main()
             }
             else if(sel==3){
 
+                for(int i=0;i<10;i++){
+                    nuevo.verCita(i);
+                }
+
             }
             else if(sel==4){
                 bandera2=1;
