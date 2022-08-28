@@ -6,13 +6,13 @@ class creadorcitas
 private:
 
 
-    static citas lista[10];
-    static int contador;
+     citas lista1[10];
+     int contador;
 
 public:
     creadorcitas();
     void llenarcita();
-    void verCita();
+    void verCita(int);
 
 };
 

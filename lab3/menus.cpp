@@ -38,3 +38,16 @@ int menu_1_2(){
     return a;
 
 }
+
+int menu_2(){
+    int a;
+    cout<<"Que deceas hacer: \n "
+          "1.crear un evento\n "
+          "2.ver un evento\n "
+          "3.ver todas las citas\n "
+          "4.Regresar\n "
+          "5.Salir: ";
+    cin>>a;
+    return a;
+
+}

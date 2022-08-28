@@ -8,7 +8,7 @@ using namespace std;
 class fecha
 {
 private:
-    int ano=0;
+    int anio=0;
     int mes_n=0;
     string mes_l;
     int dia=0;
@@ -17,19 +17,22 @@ private:
 
 public:
     fecha();
-    fecha(int,int,int,int,int);
-    fecha(int,string,int,int,int);
-    int verificarAno(int);
-    int verificarMes(int);
-    string verificarMes(string);
-    int verificarDia(int);
-    int verificarHora(int);
-    int verificarMinutos(int);
-    void getAno();
-    void getMes();
-    void getdia();
-    void gethora();
-    void getMinutos();
+    void llenar();
+    bool verificarAnio(int);
+    bool anio_bisiesto(int);
+    bool verificarMes(int);
+    bool verificarMes(string);
+    bool verificarDia(int,bool);
+    bool verificarHora(int);
+    bool verificarMinutos(int);
+    void cambioMes(int);
+
+    int tipoMes();
+    int getAnio();
+    string getMes();
+    int getdia();
+    int gethora();
+    int getMinutos();
 
 };
 

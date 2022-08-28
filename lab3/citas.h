@@ -12,8 +12,12 @@ private:
 
 public:
     citas();
-    citas(string,string,string);
-    void mostrarCita();
+    void cita(string,string,string);
+    void getnombre1();
+    void getnombre2();
+    void getlugar();
+    void fechadelevento();
+    void horaDelEvento();
 };
 
 #endif // CITAS_H

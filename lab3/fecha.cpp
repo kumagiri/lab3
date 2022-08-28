@@ -9,16 +9,19 @@ fecha::fecha()
 }
 void fecha::llenar(){
     bool verdad=false;
-    do{
+    bool bisiesto=false;
+    do{//año
         int _anio=0;
         cout<<"Por favor ingrese el año en el que se desarrollara la cita\n: ";
         cin>>_anio;
         verdad=verificarAnio(_anio);
+        bisiesto=anio_bisiesto(_anio);
 
     }while(verdad==false);
-    verdad=false;
 
-    do{
+
+    do{//mes incluye los dos metodos
+        verdad=false;
         int mesn=0,metodo=0;
         string mesl;
         cout<<"En que formato desea ingresar el mes"
@@ -27,11 +30,52 @@ void fecha::llenar(){
         cin>>metodo;
         if(metodo==1){
         cout<<"Por favor ingrese el mes en el que se desarrollara la cita\n"
-              "recuerde hacerlo to en letras minusculas";
+              "recuerde hacerlo en letras minusculas";
         cin>>mesl;
-        verdad=verificarMes(mesn);
+        verdad=verificarMes(mesl);
+
+        }
+        else if(metodo==2){
+            cout<<"Por favor ingrese el mes en el que se desarrollara la cita\n"
+                  "recuerde hacerlo con los numeros de cada mes del 1 al 12";
+            cin>>mesn;
+            verdad=verificarMes(mesn);
+            if(verdad==true){
+                cambioMes(mesn);
+
+            }
         }
     }while(verdad==false);
+
+    do{//dia
+     int _dia=0;
+     verdad=false;
+     cout<<"Por favor ingrese el dia de la cita recuerde\n"
+           "hacerlo deacuerdo al mes en el que es la cita";
+     cin>>_dia;
+     verdad= verificarDia(_dia,bisiesto);
+
+    }while(verdad==true);
+
+
+    do{//hora
+        int _hora;
+        verdad=false;
+        cout<<"Por favor ingrese la hora de la cita en el formato de 24 horas: ";
+        cin>>_hora;
+        verdad=verificarHora(_hora);
+    }while(verdad==false);
+
+    do{//minutos
+        verdad=false;
+        int _min=0;
+        cout<<"Por favor ingresa los minutos en el que se dara la cita: ";
+        cin>>_min;
+        verdad=verificarMinutos(_min);
+
+    }while (verdad==false);
+
+
 
 }
 
@@ -60,12 +104,82 @@ bool fecha::anio_bisiesto(int _anio){
 
 bool fecha::verificarMes(int _mes_n){
     bool verdad=false;
-    if(_mes_n>0 and mes_n<13){
+    if(_mes_n>0 and _mes_n<13){
         verdad=true;
     }
     else{
         system("cls");
         cout<<"Recuerda que el mes debe estar entre 1 y 12\n";
+    }
+
+    return verdad;
+}
+
+bool fecha::verificarMes(string mesl){
+    bool verdad=false;
+    if (mesl=="Enero" or mesl=="enero"){
+        mes_l=mesl;
+        mes_n=1;
+        verdad=true;
+    }
+    else if (mesl=="Febrero" or mesl=="febrero"){
+        mes_l=mesl;
+        mes_n=2;
+        verdad=true;
+    }
+    else if (mesl=="Marzo" or mesl=="marzo"){
+        mes_l=mesl;
+        mes_n=3;
+        verdad=true;
+    }
+    else if (mesl=="Abril" or mesl=="abril"){
+        mes_l=mesl;
+        mes_n=4;
+        verdad=true;
+    }
+    else if (mesl=="Mayo" or mesl=="mayo"){
+        mes_l=mesl;
+        mes_n=5;
+        verdad=true;
+    }
+    else if (mesl=="Junio" or mesl=="junio"){
+        mes_l=mesl;
+        mes_n=6;
+        verdad=true;
+    }
+    else if (mesl=="Julio" or mesl=="julio"){
+        mes_l=mesl;
+        mes_n=7;
+        verdad=true;
+    }
+    else if (mesl=="Agosto" or mesl=="agosto"){
+        mes_l=mesl;
+        mes_n=8;
+        verdad=true;
+    }
+    else if (mesl=="Septiembre" or mesl=="septiembre"){
+        mes_l=mesl;
+        mes_n=9;
+        verdad=true;
+    }
+    else if (mesl=="Octubre" or mesl=="octubre"){
+        mes_l=mesl;
+        mes_n=10;
+        verdad=true;
+    }
+    else if (mesl=="Noviembre" or mesl=="noviembre"){
+        mes_l=mesl;
+        mes_n=11;
+        verdad=true;
+    }
+    else if (mesl=="Diciembre" or mesl=="diciembre"){
+        mes_l=mesl;
+        mes_n=12;
+        verdad=true;
+    }
+    else{
+        cout<<"el mes indicado no es correcto\n";
+        system("cls");
     }
 
     return verdad;
@@ -78,6 +192,7 @@ bool fecha::verificarDia(int _dia, bool bisiesto){
     if(es==1){
         if(_dia>0 and _dia<=31){
             verdad=true;
+            dia=_dia;
         }
         else{
             system("cls");
@@ -87,6 +202,7 @@ bool fecha::verificarDia(int _dia, bool bisiesto){
     else if(es==2){
         if(_dia>0 and _dia<=30){
             verdad=true;
+            dia=_dia;
         }
         else{
             system("cls");
@@ -97,6 +213,7 @@ bool fecha::verificarDia(int _dia, bool bisiesto){
         if(bisiesto==true){
             if(dia>0 and dia<=29){
                 verdad=true;
+                dia=_dia;
             }
             else{
                 system("cls");
@@ -107,6 +224,7 @@ bool fecha::verificarDia(int _dia, bool bisiesto){
         else{
             if(_dia>0 and _dia<=28){
                 verdad=true;
+                dia=_dia;
             }
             else{
                 system("cls");
@@ -122,6 +240,7 @@ bool fecha::verificarHora(int _hora){
     bool verdad=false;
     if(_hora>0 and _hora<=24){
         verdad=true;
+        hora=_hora;
     }
     else{
         system("cls");
@@ -134,6 +253,7 @@ bool fecha::verificarMinutos(int _min){
     bool verdad=false;
     if(_min>0 and _min<=60){
         verdad=true;
+        min=_min;
     }
     else{
         system("cls");
@@ -145,16 +265,23 @@ bool fecha::verificarMinutos(int _min){
 int fecha::tipoMes(){
     int es=0;
     switch (mes_n) {
-    case (1,3,5,7,8,10,12):{
-
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
         es=1;
         break;
-    }
-    case (4,6,9,11):{
 
+    case 4:
+    case 6:
+    case 9:
+    case 11:
         es=2;
         break;
-    }
+
     case 2:{
         es=3;
         break;
@@ -215,65 +342,6 @@ void fecha::cambioMes(int mesn){
         break;
     }
     }
-}
-void fecha::cambioMes(string mesl){
-
-
-    switch (mesl) {
-    case 'enero':{
-        mes_n=1;
-        break;
-    }
-    case "febrero":{
-        mes_n=2;
-        break;
-    }
-    case "marzo":{
-        mes_n=3;
-        break;
-    }
-    case "abril":{
-        mes_n=4;
-        break;
-    }
-    case "mayo":{
-        mes_n=5;
-        break;
-    }
-    case "junio":{
-        mes_n=6;
-        break;
-    }
-    case "julio":{
-        mes_n=7;
-        break;
-    }
-    case "agosto":{
-        mes_n=8;
-        break;
-    }
-    case "septiembre":{
-        mes_n=9;
-        break;
-    }
-    case "octubre":{
-        mes_n=10;
-        break;
-    }
-    case "noviembre":{
-        mes_n=11;
-        break;
-    }
-    case "diciembre":{
-        mes_n=12;
-        break;
-    }
-    }
-
-
-
-
-
 }
 
 int fecha::getAnio(){

@@ -125,7 +125,29 @@ int main()
 
         }
         else if (sel==2){
+            bool bandera2=0;
+            sel=0;
+            sel=menu_2();
+            creadorcitas nuevo;
+            if(sel==1){
+                nuevo.llenarcita();
+            }
+            else if(sel==2){
+                int num;
+                cout<<"cual es el numero de la cita que desea ver "
+                      "recuerda es del 1 al 10: ";
+                cin>>num;
+                nuevo.verCita(num);
+            }
+            else if(sel==3){
 
+            }
+            else if(sel==4){
+                bandera2=1;
+            }
+            else if(sel==5){
+                exit(1);
+            }
         }
         else if (sel==3){
 
