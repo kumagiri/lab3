@@ -8,11 +8,11 @@ class citas
 {
 private:
     string nombre1,nombre2,lugar;
-    fecha *diaCita;
+    fecha diaCita;
 
 public:
     citas();
-    void cita(string,string,string);
+    citas(string,string,string);
     void getnombre1();
     void getnombre2();
     void getlugar();

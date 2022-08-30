@@ -33,7 +33,7 @@ public:
     int getdia();
     int gethora();
     int getMinutos();
-
+    friend class creadorcitas;
 };
 
 #endif // FECHA_H

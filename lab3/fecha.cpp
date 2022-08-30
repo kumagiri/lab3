@@ -12,32 +12,32 @@ void fecha::llenar(){
     bool bisiesto=false;
     do{//año
         int _anio=0;
-        cout<<"Por favor ingrese el año en el que se desarrollara la cita\n: ";
+        cout<<"Por favor ingrese el anio en el que se desarrollara la cita: ";
         cin>>_anio;
         verdad=verificarAnio(_anio);
         bisiesto=anio_bisiesto(_anio);
 
     }while(verdad==false);
 
-
+    system("cls");
     do{//mes incluye los dos metodos
         verdad=false;
         int mesn=0,metodo=0;
         string mesl;
-        cout<<"En que formato desea ingresar el mes"
+        cout<<"En que formato desea ingresar el mes\n"
               "1.letra\n"
               "2.numero: ";
         cin>>metodo;
         if(metodo==1){
         cout<<"Por favor ingrese el mes en el que se desarrollara la cita\n"
-              "recuerde hacerlo en letras minusculas";
+              "recuerde hacerlo en letras minusculas: ";
         cin>>mesl;
         verdad=verificarMes(mesl);
 
         }
         else if(metodo==2){
             cout<<"Por favor ingrese el mes en el que se desarrollara la cita\n"
-                  "recuerde hacerlo con los numeros de cada mes del 1 al 12";
+                  "recuerde hacerlo con los numeros de cada mes del 1 al 12: ";
             cin>>mesn;
             verdad=verificarMes(mesn);
             if(verdad==true){
@@ -46,18 +46,18 @@ void fecha::llenar(){
             }
         }
     }while(verdad==false);
-
+    system("cls");
     do{//dia
      int _dia=0;
      verdad=false;
      cout<<"Por favor ingrese el dia de la cita recuerde\n"
-           "hacerlo deacuerdo al mes en el que es la cita";
+           "hacerlo deacuerdo al mes en el que es la cita: ";
      cin>>_dia;
      verdad= verificarDia(_dia,bisiesto);
 
-    }while(verdad==true);
+    }while(verdad==false);
 
-
+    system("cls");
     do{//hora
         int _hora;
         verdad=false;
@@ -65,7 +65,7 @@ void fecha::llenar(){
         cin>>_hora;
         verdad=verificarHora(_hora);
     }while(verdad==false);
-
+    system("cls");
     do{//minutos
         verdad=false;
         int _min=0;
@@ -89,7 +89,7 @@ bool fecha::verificarAnio(int _anio){
     }
     else{
         system("cls");
-        cout<<"Recuerda que el ano debe estar entre 1 y 12\n";
+        cout<<"Recuerda que el ano debe estar entre 2022 y 2999\n";
     }
 
     return verdad;

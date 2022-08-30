@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-
+int creadorcitas::contador=0;
 creadorcitas::creadorcitas()
 {
 
@@ -19,8 +19,9 @@ void creadorcitas::llenarcita(){
     cin>>nombre2;
     cout<<"Introdusca el lugar acordado para la cita: ";
     cin>>lugar;
-    lista1[contador].cita(nombre1,nombre2,lugar);
+    lista1[contador]=citas(nombre1,nombre2,lugar);
     contador++;
+
 }
 
 void creadorcitas::verCita(int num){

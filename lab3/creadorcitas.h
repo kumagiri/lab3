@@ -1,15 +1,18 @@
 #ifndef CREADORCITAS_H
 #define CREADORCITAS_H
 #include "citas.h"
+
+
 class creadorcitas
 {
 private:
 
 
      citas lista1[10];
-     int contador;
+
 
 public:
+    static int contador;
     creadorcitas();
     void llenarcita();
     void verCita(int);

@@ -8,6 +8,8 @@
 
 using namespace std;
 
+//punto 1 comienza en la linea 21
+//punto 2 comienza linea 129
 int main()
 {
     int sel=0,num=0;
@@ -127,6 +129,8 @@ int main()
         else if (sel==2){
             bool bandera2=0;
             sel=0;
+            system("cls");
+            do{
             sel=menu_2();
             creadorcitas nuevo;
             if(sel==1){
@@ -137,6 +141,7 @@ int main()
                 cout<<"cual es el numero de la cita que desea ver "
                       "recuerda es del 1 al 10: ";
                 cin>>num;
+                num-=1;
                 nuevo.verCita(num);
             }
             else if(sel==3){
@@ -152,6 +157,7 @@ int main()
             else if(sel==5){
                 exit(1);
             }
+            }while(bandera2==false);
         }
         else if (sel==3){
 
