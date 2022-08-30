@@ -6,6 +6,7 @@
 
 using namespace std;
 int creadorcitas::contador=0;
+citas creadorcitas::lista1[10];
 creadorcitas::creadorcitas()
 {
 

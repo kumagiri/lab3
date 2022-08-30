@@ -8,10 +8,11 @@ class creadorcitas
 private:
 
 
-     citas lista1[10];
+
 
 
 public:
+    static citas lista1[10];
     static int contador;
     creadorcitas();
     void llenarcita();
